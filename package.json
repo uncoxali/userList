@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "axios": "^0.21.1",
+    "next": "10.0.4",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-horizontal-scrolling-menu": "^0.7.8",
+    "react-indiana-drag-scroll": "^1.8.0",
+    "scss": "^0.2.4"
+  },
+  "devDependencies": {
+    "react-alice-carousel": "^2.2.0"
+  }
+}
