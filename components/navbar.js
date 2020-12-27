@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import SliderMenu from './sliderMenu'
 import Footer from './footer'
-import Search from './search';
+// import Search from './search';
 
 const NavBar = (props) => {
     return (
         <>
-
-            <nav className="navbar navbar-expand-lg navbar-light bg-light col-12">
+            <nav className="navbar navbar-expand-lg navbar-light col-12 mt-5">
                 <div className="container-md">
 
                     <div className="navbar-brand col-8">
@@ -17,7 +16,7 @@ const NavBar = (props) => {
                         </Link>
                     </div>
                     <div className="">
-                        <Search />
+                        {/* <Search /> */}
                     </div>
                     <div className="mb-3 menu">
                         <SliderMenu />

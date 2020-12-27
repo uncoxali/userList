@@ -32,25 +32,19 @@ const Home = props => {
     }, []);
 
     return (
-        <div className="container app">
-            <div className="container text">
-                <div className="">
-                    <Navbar serach={users} />
+        <>
+            <div className="container app">
+                <div className="container text" >
+                    <div className="">
+                        <Navbar serach={users} />
+                        <Users users={users} />
+                        <ListUser posts={posts} />
+                    </div>
                 </div>
-                {
-                    !loading ? <h2>Loading...</h2>
-                        : <Users users={users} />
-                }
-                <ListUser posts={posts} />
-                {/* <ListUser users={users} /> */}
-                {/* <Filters filter={props.users} /> */}
-                {/* <ListUser posts={props.posts} /> */}
-                {/* <Footer /> */}
             </div>
-        </div>
+        </>
     )
 }
-
 // export async function getStaticProps() {
 //     let res = await fetch(`${BASE_URL}/user`, { headers: { 'app-id': APP_ID } });
 //     let users = await res.json();
