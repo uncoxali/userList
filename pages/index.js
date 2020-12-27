@@ -1,41 +1,51 @@
 import fetch from 'node-fetch';
 import axios from 'axios'
+import { React, useEffect, useState } from 'react';
 
 // Components
 import Users from '../components/users';
 import ListUser from '../components/ListUser';
-// import Filters from './../components/Filter'
-import { React, useEffect, useState } from 'react';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 
 const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '5fe5f86de8038213973737d5';
+const APP_ID = '5fe72277a2e68d54d0fb964d';
 
 const Home = props => {
 
     const [users, setUsers] = useState([])
+    const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState()
 
     useEffect(() => {
         setLoading(true)
-        fetch(`${BASE_URL}/user`, { headers: { 'app-id': APP_ID } })
+        fetch(`${BASE_URL}/user/`, { headers: { 'app-id': APP_ID } })
             .then(res => res.json())
             .then(json => setUsers(json.data))
+    }, []);
 
+    useEffect(() => {
+        setLoading(true)
+        fetch(`${BASE_URL}/post`, { headers: { 'app-id': APP_ID } })
+            .then(res => res.json())
+            .then(json => setPosts(json.data))
     }, []);
 
     return (
-        <div className="container mt-4 app">
+        <div className="container app">
             <div className="container text">
-                <div className="d-flex ">
-                    <h2 className="col-8">List Users</h2>
-                    <input className="form-control" type="text" placeholder="search" />
+                <div className="">
+                    <Navbar serach={users} />
                 </div>
                 {
-                    !loading ? <h2>Loading...</h2> : (<Users users={users} />)
+                    !loading ? <h2>Loading...</h2>
+                        : <Users users={users} />
                 }
-                {/* <ListUser userposts={props.users} posts={props.posts} /> */}
+                <ListUser posts={posts} />
+                {/* <ListUser users={users} /> */}
                 {/* <Filters filter={props.users} /> */}
                 {/* <ListUser posts={props.posts} /> */}
+                {/* <Footer /> */}
             </div>
         </div>
     )

@@ -121,7 +121,7 @@ footer > h1 {
   font-family: "Coda", sans-serif;
   color: #343f3d;
   line-height: 6;
-  font-size: 1.6em;
+  font-size: 1em;
 }
 footer > h1 a {
   text-decoration: none;
@@ -130,9 +130,9 @@ footer > h1 a {
 
 
 .wrapper{
-  margin-top: 20px;
+  border: 1px solid #e4d8d8 ;
+  margin-top: 30px;
   max-height: 120px;
-  border: 1px solid #ddd;
   display: flex;
   overflow-x: auto;
 }
@@ -145,5 +145,106 @@ footer > h1 a {
   color: #333;
   min-width: 110px;
   height: 110px;
+
+}
+
+.home{
+  color: #333;
+text-emphasis: none;
+  font-size: 30px;
+  color: rgb(5, 205, 255);
+}
+.search{
+  color: #333;
+text-emphasis: none;
+  font-size: 40px;
+  
+}
+
+/* Search */
+
+
+
+.flexbox {
+
+  color: #000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  margin: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.search > h3 {
+  font-weight: normal;
+}
+
+.search > h1,
+.search > h3 {
+  color: rgb(63, 63, 63);
+  margin-bottom: 15px;
+  text-shadow: 0 1px #0091c2;
+}
+
+.search > div {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 1px #0091c2);
+}
+
+.search > div:after {
+  content: "";
+  background: rgb(70, 70, 70);
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  top: 40px;
+  right: 2px;
+  transform: rotate(135deg);
+}
+
+.search > div > input {
+  color: rgb(77, 77, 77);
+  font-size: 16px;
+  background: transparent;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+  border: solid 3px rgb(73, 73, 73);
+  outline: none;
+  border-radius: 35px;
+  transition: width 0.5s;
+}
+
+.search > div > input::placeholder {
+  color: #3a3a3a;
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+
+.search > div > input:focus::placeholder {
+  opacity: 1;
+}
+
+.search > div > input:focus,
+.search > div > input:not(:placeholder-shown) {
+  width: 250px;
+}
+
+
+.footer{
+ 
+    text-align: center;
+    align-items: center;
+}
+
+
+.img{
+  width: 200px;
 
 }

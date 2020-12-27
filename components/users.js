@@ -1,14 +1,11 @@
 import Link from 'next/link';
 
-
 //components
-
-
 const Users = props => {
 
     return (
-        <>
-            <ul className=" wrapper">
+        <div className="container">
+            <ul className="wrapper">
                 {
                     props.users.map(user => {
                         return (
@@ -22,7 +19,7 @@ const Users = props => {
                     })
                 }
             </ul>
-        </>
+        </div>
     )
 }
 

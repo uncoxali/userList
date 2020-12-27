@@ -1,5 +1,6 @@
 
-.user{list-style: none;}
+.user{list-style: none;
+}
  img.user {
     padding: .7em;
     margin-left: .3em;
@@ -7,4 +8,9 @@
     height: 6.23em;
     width: 6.23em;
     border-radius: 18em;
+  }
+
+
+  .listuser{
+    position:absolute;
   }

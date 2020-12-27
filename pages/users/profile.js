@@ -3,8 +3,8 @@
 const Profile = (props) => {
     const { user } = props
     return (
-        <>
-            <h1 className="title-pen"> {user.name} <span></span></h1>
+        <div className="container">
+            <h1 className="title-pen mt-5"> {user.name} <span></span></h1>
             <div className="user-profile">
                 <img className="avatar" src={user.picture} alt="Ash" />
                 <div className="username">{user.lastName}</div>
@@ -32,7 +32,7 @@ const Profile = (props) => {
                         <span className="entypo-dribbble"></span> shot</a>
                 </h1>
             </footer>
-        </>
+        </div>
     )
 }
 

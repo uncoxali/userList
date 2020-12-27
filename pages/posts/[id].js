@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import Navbar from '../../components/navbar'
-import Profile from '../users/profile'
+import Posts from '../posts/posts'
 import React, { useEffect, useState } from 'react';
 
 const BASE_URL = 'https://dummyapi.io/data/api';
@@ -22,14 +22,14 @@ const SinglePost = props => {
             <div>
                 <Navbar />
             </div>
-            <Profile user={user} />
+            <Posts user={user} />
         </div>
     )
 }
 
 export async function getStaticPaths() {
 
-    let res = await fetch(`${BASE_URL}/user`, { headers: { 'app-id': APP_ID } });
+    let res = await fetch(`${BASE_URL}/post`, { headers: { 'app-id': APP_ID } });
     let users = await res.json();
     let list = await users.data;
     let paths = list.map(user => {
@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    let res = await fetch(`${BASE_URL}/user/${params.id}`, { headers: { 'app-id': APP_ID } });
+    let res = await fetch(`${BASE_URL}/post/${params.id}`, { headers: { 'app-id': APP_ID } });
     let user = await res.json();
 
     return {
